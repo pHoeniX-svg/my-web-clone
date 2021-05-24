@@ -43,7 +43,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- CSS Transforms and Transition (a bit)
+- CSS Transforms and Transition
 - Mobile-first workflow
 
 ### What I learned
