@@ -1,0 +1,152 @@
+:root {
+  --lexendFont: 'Lexend Deca', sans-serif;
+  --bigShouldersFont: 'Big Shoulders Display', cursive;
+  --orangeColor: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --darkerCyan: hsl(179, 100%, 13%);
+  --light: rgba(255, 255, 255, 0.75);
+  --lightGray: rgb(242, 242, 242);
+}
+
+/* Reset Default Styles */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  max-width: 100vw;
+  max-height: 100%;
+}
+
+/* Setup */
+body {
+  background-color: var(--lightGray);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: var(--lexendFont);
+  line-height: 1.5;
+  color: var(--light);
+}
+
+/* Button Styles */
+a.btn {
+  display: inline-block;
+  margin-top: 6rem;
+  padding: 0.5rem 1.1rem;
+  border: 0.16rem solid rgba(255, 255, 255, 0);
+  border-radius: 2rem;
+  background-color: var(--lightGray);
+  font-size: 0.7rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.sedans a.btn {
+  color: var(--orangeColor);
+}
+.suvs a.btn {
+  color: var(--darkCyan);
+}
+.luxury a.btn {
+  color: var(--darkerCyan);
+}
+
+a.btn:hover,
+a.btn:active,
+a.btn:focus {
+  transform: scale(0.9);
+  border-color: var(--lightGray);
+  color: var(--lightGray);
+}
+.sedans a.btn:hover,
+.sedans a.btn:active,
+.sedans a.btn:focus {
+  background-color: var(--orangeColor);
+}
+.suvs a.btn:hover,
+.suvs a.btn:active,
+.suvs a.btn:focus {
+  background-color: var(--darkCyan);
+}
+.luxury a.btn:hover,
+.luxury a.btn:active,
+.luxury a.btn:focus {
+  background-color: var(--darkerCyan);
+}
+
+/* Container */
+.container {
+  width: 80%;
+  margin: 3rem auto;
+  display: grid;
+  border-radius: 15px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+}
+
+/* Cards */
+.card {
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+}
+.card h1 {
+  margin: 2rem 0;
+  font-family: var(--bigShouldersFont);
+  font-size: 2.5rem;
+  color: var(--lightGray);
+  text-transform: uppercase;
+}
+.card.sedans {
+  background-color: var(--orangeColor);
+  border-radius: 15px 15px 0 0;
+}
+.card.suvs {
+  background-color: var(--darkCyan);
+}
+.card.luxury {
+  background-color: var(--darkerCyan);
+  border-radius: 0 0 15px 15px;
+}
+
+.attribution {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0.5rem;
+  font-size: 11px;
+  color: red;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 51rem) {
+  html,
+  body {
+    width: 100vw;
+    height: 100%;
+  }
+  body {
+    align-items: center;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  .card.sedans {
+    border-radius: 15px 0 0 15px;
+  }
+  .card.luxury {
+    border-radius: 0 15px 15px 0;
+  }
+}
