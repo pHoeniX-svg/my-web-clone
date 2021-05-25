@@ -112,19 +112,7 @@ a.btn:focus {
   border-radius: 0 0 15px 15px;
 }
 
-.attribution {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-bottom: 0.5rem;
-  font-size: 11px;
-  color: red;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
+
 
 @media (min-width: 51rem) {
   html,
