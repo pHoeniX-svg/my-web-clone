@@ -1,0 +1,139 @@
+:root {
+  --lexendFont: 'Lexend Deca', sans-serif;
+  --bigShouldersFont: 'Big Shoulders Display', cursive;
+  --orangeColor: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --darkerCyan: hsl(179, 100%, 13%);
+  --light: rgba(255, 255, 255, 0.75);
+  --lightGray: rgb(242, 242, 242);
+  --sm: 0.8125rem;
+  --md: 0.9375rem;
+  --lg: 2rem;
+  --xl: 2.25rem;
+}
+
+/* Setup */
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--light);
+  background-color: var(--lightGray);
+  font-family: var(--lexendFont);
+  font-size: var(--md);
+  line-height: 1.5;
+}
+
+/* Button Styles */
+.btn {
+  background-color: white; /* Green */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: var(--md);
+  transition: all 0.3s ease-in-out;
+}
+.sedans .btn a {
+  color: var(--orangeColor);
+}
+.suvs .btn a {
+  color: var(--darkCyan);
+}
+.luxury .btn a {
+  color: var(--darkerCyan);
+}
+
+.btn a:hover,
+.btn a:active,
+.btn a:focus {
+  color: var(--lightGray);
+  border-color: var(--lightGray);
+  transform: scale(0.9);
+}
+.sedans .btn a:hover,
+.sedans .btn a:active,
+.sedans .btn a:focus {
+  background-color: var(--orangeColor);
+}
+.suvs .btn a:hover,
+.suvs .btn a:active,
+.suvs .btn a:focus {
+  background-color: var(--darkCyan);
+}
+.luxury .btn a:hover,
+.luxury .btn a:active,
+.luxury .btn a:focus {
+  background-color: var(--darkerCyan);
+}
+
+.container {
+  width: max(75vw, 300px);
+  width: max(70vw, 50%, 280px);
+  /* width: min(900px,max(300px, 300/900 * 100vw)); */
+  /* width: clamp(280px, 70vw, 768px); */
+  margin: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  padding: 2.6rem;
+}
+
+.card h1 {
+  margin: 2rem 0;
+  color: var(--lightGray);
+  font-family: var(--bigShouldersFont);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.card p {
+  font-size: var(--sm);
+}
+
+
+.card.sedans {
+  background-color: var(--orangeColor);
+  border-radius: 15px 15px 0 0;
+}
+.card.suvs {
+  background-color: var(--darkCyan);
+}
+.card.luxury {
+  background-color: var(--darkerCyan);
+  border-radius: 0 0 15px 15px;
+}
+
+/* Attribution */
+.attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0.5rem;
+  color: #080e26;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: #080e26;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card.sedans {
+    border-radius: 15px 0 0 15px;
+  }
+  .card.luxury {
+    border-radius: 0 15px 15px 0;
+  }
+}
