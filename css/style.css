@@ -1,11 +1,11 @@
 :root {
   --lexendFont: 'Lexend Deca', sans-serif;
   --bigShouldersFont: 'Big Shoulders Display', cursive;
-  --orangeColor: hsl(31, 77%, 52%);
-  --darkCyan: hsl(184, 100%, 22%);
-  --darkerCyan: hsl(179, 100%, 13%);
-  --light: rgba(255, 255, 255, 0.75);
-  --lightGray: rgb(242, 242, 242);
+  --btn-orange: hsl(31, 77%, 52%);
+  --btn-cyan: hsl(184, 100%, 22%);
+  --btn-drkcyan: hsl(179, 100%, 13%);
+  --txt-light: rgba(255, 255, 255, 0.75);
+  --txt-lightgray: rgb(242, 242, 242);
   --sm: 0.8125rem;
   --md: 0.9375rem;
   --lg: 2rem;
@@ -17,95 +17,91 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  color: var(--light);
-  background-color: var(--lightGray);
+  justify-content: center;
+  color: var(--txt-light);
+  background-color: var(--txt-lightgray);
   font-family: var(--lexendFont);
   font-size: var(--md);
   line-height: 1.5;
 }
-
+.link {
+  color: var(--txt-lightgray);
+}
 /* Button Styles */
 .btn {
-  background-color: white; /* Green */
-  border: none;
-  border-radius: 20px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
   display: inline-block;
+  padding: 9px 10px;
+  background-color: var(--txt-lightgray);
+  border: 1.6px solid rgba(255, 255, 255, 0);
+  border-radius: 2rem;
   font-size: var(--md);
   transition: all 0.3s ease-in-out;
 }
 .sedans .btn a {
-  color: var(--orangeColor);
+  color: var(--btn-orange);
 }
 .suvs .btn a {
-  color: var(--darkCyan);
+  color: var(--btn-cyan);
 }
 .luxury .btn a {
-  color: var(--darkerCyan);
+  color: var(--btn-drkcyan);
 }
 
-.btn a:hover,
-.btn a:active,
-.btn a:focus {
-  color: var(--lightGray);
-  border-color: var(--lightGray);
+.btn:hover,
+.btn:active,
+.btn:focus {
+  border-color: var(--txt-lightgray);
   transform: scale(0.9);
+  color: var(--txt-lightgray);
 }
-.sedans .btn a:hover,
-.sedans .btn a:active,
-.sedans .btn a:focus {
-  background-color: var(--orangeColor);
+
+.sedans .btn:hover,
+.sedans .btn:active,
+.sedans .btn:focus {
+  background-color: var(--btn-orange);
 }
-.suvs .btn a:hover,
-.suvs .btn a:active,
-.suvs .btn a:focus {
-  background-color: var(--darkCyan);
+.suvs .btn:hover,
+.suvs .btn:active,
+.suvs .btn:focus {
+  background-color: var(--btn-cyan);
 }
-.luxury .btn a:hover,
-.luxury .btn a:active,
-.luxury .btn a:focus {
-  background-color: var(--darkerCyan);
+.luxury .btn:hover,
+.luxury .btn:active,
+.luxury .btn:focus {
+  background-color: var(--btn-drkcyan);
 }
 
 .container {
-  width: max(75vw, 300px);
-  width: max(70vw, 50%, 280px);
-  /* width: min(900px,max(300px, 300/900 * 100vw)); */
-  /* width: clamp(280px, 70vw, 768px); */
   margin: 4rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .card {
   display: flex;
   flex-flow: column;
+  min-width: 15rem;
+  max-width: 19rem;
   padding: 2.6rem;
 }
-
 .card h1 {
   margin: 2rem 0;
-  color: var(--lightGray);
+  color: var(--txt-lightgray);
   font-family: var(--bigShouldersFont);
   font-size: 2.5rem;
   text-transform: uppercase;
 }
 .card p {
   font-size: var(--sm);
+  margin-bottom: 2rem;
 }
-
-
 .card.sedans {
-  background-color: var(--orangeColor);
+  background-color: var(--btn-orange);
   border-radius: 15px 15px 0 0;
 }
 .card.suvs {
-  background-color: var(--darkCyan);
+  background-color: var(--btn-cyan);
 }
 .card.luxury {
-  background-color: var(--darkerCyan);
+  background-color: var(--btn-drkcyan);
   border-radius: 0 0 15px 15px;
 }
 
@@ -124,6 +120,7 @@ body {
   color: #080e26;
 }
 
+/* Media Queries */
 @media (min-width: 48rem) {
   .container {
     display: flex;
